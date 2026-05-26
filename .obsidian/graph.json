@@ -1,0 +1,107 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": true,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "tag:#session-1",
+      "color": {
+        "a": 1,
+        "rgb": 16735083
+      }
+    },
+    {
+      "query": "tag:#session-2",
+      "color": {
+        "a": 1,
+        "rgb": 4286945
+      }
+    },
+    {
+      "query": "tag:#session-3",
+      "color": {
+        "a": 1,
+        "rgb": 2263842
+      }
+    },
+    {
+      "query": "tag:#session-4",
+      "color": {
+        "a": 1,
+        "rgb": 8388736
+      }
+    },
+    {
+      "query": "tag:#location",
+      "color": {
+        "a": 1,
+        "rgb": 32896
+      }
+    },
+    {
+      "query": "tag:#npc",
+      "color": {
+        "a": 1,
+        "rgb": 16760576
+      }
+    },
+    {
+      "query": "tag:#faction tag:#factions",
+      "color": {
+        "a": 1,
+        "rgb": 16716947
+      }
+    },
+    {
+      "query": "tag:#mystery",
+      "color": {
+        "a": 1,
+        "rgb": 4915330
+      }
+    },
+    {
+      "query": "tag:#encounter",
+      "color": {
+        "a": 1,
+        "rgb": 16711680
+      }
+    },
+    {
+      "query": "tag:#dm-tool",
+      "color": {
+        "a": 1,
+        "rgb": 8421504
+      }
+    },
+    {
+      "query": "tag:#campaign-core",
+      "color": {
+        "a": 1,
+        "rgb": 16766720
+      }
+    },
+    {
+      "query": "tag:#player-hook",
+      "color": {
+        "a": 1,
+        "rgb": 3329330
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1.59594618055556,
+  "lineSizeMultiplier": 1.34626736111111,
+  "collapse-forces": false,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 460,
+  "scale": 0.5828682724076929,
+  "close": false
+}

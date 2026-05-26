@@ -1,0 +1,434 @@
+/* ============================================================
+   D&D 5e Book Styling — Night Train to Sharn
+   Gives notes, tables, and UI a D&D 5e sourcebook aesthetic.
+   ============================================================ */
+
+/* ---- Google Fonts ---- */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* ============================================================
+   1. ROOT VARIABLES — D&D color palette
+   ============================================================ */
+.theme-light {
+  --dnd-parchment:        #fdf1dc;
+  --dnd-parchment-dark:   #f2e0c0;
+  --dnd-primary:          #7a200d;
+  --dnd-primary-light:    #922610;
+  --dnd-gold:             #e69a28;
+  --dnd-dark:             #2c1a0e;
+  --dnd-table-header-bg:  #7a200d;
+  --dnd-table-header-fg:  #fdf1dc;
+  --dnd-table-row-even:   #faf0dc;
+  --dnd-table-row-odd:    #fdf5e8;
+  --dnd-table-border:     #c9a87c;
+  --dnd-note-border:      #7a200d;
+  --dnd-note-bg:          #fef7ea;
+}
+
+.theme-dark {
+  --dnd-parchment:        #3a2a1a;
+  --dnd-parchment-dark:   #2e2012;
+  --dnd-primary:          #c94a2a;
+  --dnd-primary-light:    #d65a3a;
+  --dnd-gold:             #d4a020;
+  --dnd-dark:             #e8d5b7;
+  --dnd-table-header-bg:  #5a2a1a;
+  --dnd-table-header-fg:  #e8d5b7;
+  --dnd-table-row-even:   #3a2a1a;
+  --dnd-table-row-odd:    #423020;
+  --dnd-table-border:     #5a4030;
+  --dnd-note-border:      #c94a2a;
+  --dnd-note-bg:          #3a2e20;
+}
+
+/* ============================================================
+   2. GLOBAL NOTE STYLING
+   ============================================================ */
+
+/* Parchment background for reading view */
+.markdown-reading-view .markdown-preview-view,
+.markdown-source-view .cm-editor,
+.markdown-rendered {
+  font-family: 'Noto Sans', 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
+}
+
+/* Reading view note container — parchment card */
+.markdown-reading-view .markdown-preview-view {
+  background-color: var(--dnd-parchment) !important;
+}
+
+/* ============================================================
+   3. HEADINGS — D&D style with small caps
+   ============================================================ */
+
+.markdown-rendered h1,
+.markdown-rendered h2,
+.markdown-rendered h3,
+.markdown-rendered h4,
+.markdown-rendered h5,
+.markdown-rendered h6,
+.cm-header {
+  font-family: 'Libre Baskerville', 'Lora', 'Bookman Old Style', Georgia, serif;
+  color: var(--dnd-primary);
+}
+
+.markdown-rendered h1,
+.cm-header-1 {
+  font-size: 2em;
+  font-variant: small-caps;
+  font-weight: 700;
+  border-bottom: 3px double var(--dnd-gold);
+  padding-bottom: 0.25em;
+  margin-bottom: 0.5em;
+}
+
+.markdown-rendered h2,
+.cm-header-2 {
+  font-size: 1.5em;
+  font-variant: small-caps;
+  font-weight: 700;
+  border-bottom: 2px solid var(--dnd-primary);
+  padding-bottom: 0.2em;
+}
+
+.markdown-rendered h3,
+.cm-header-3 {
+  font-size: 1.25em;
+  font-variant: small-caps;
+  font-weight: 700;
+  border-bottom: 1px solid var(--dnd-primary-light);
+  padding-bottom: 0.15em;
+}
+
+.markdown-rendered h4,
+.cm-header-4 {
+  font-size: 1.1em;
+  font-variant: small-caps;
+  font-weight: 700;
+}
+
+/* ============================================================
+   4. TABLES — D&D 5e style
+   ============================================================ */
+
+.markdown-rendered table,
+.cm-html-embed table,
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-family: 'Noto Sans', 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
+  font-size: 0.9em;
+  box-shadow: 0 0 8px rgba(122, 32, 13, 0.15);
+}
+
+/* Table header row */
+.markdown-rendered thead tr,
+.markdown-rendered th,
+.cm-html-embed thead tr,
+.cm-html-embed th,
+table thead tr,
+table th {
+  background-color: var(--dnd-table-header-bg) !important;
+  color: var(--dnd-table-header-fg) !important;
+  font-family: 'Libre Baskerville', Georgia, serif !important;
+  font-weight: 700 !important;
+  font-variant: small-caps;
+  text-align: left;
+  padding: 8px 12px;
+  border: 1px solid var(--dnd-primary);
+}
+
+/* Table body rows */
+.markdown-rendered tbody tr:nth-child(even),
+table tbody tr:nth-child(even) {
+  background-color: var(--dnd-table-row-even);
+}
+
+.markdown-rendered tbody tr:nth-child(odd),
+table tbody tr:nth-child(odd) {
+  background-color: var(--dnd-table-row-odd);
+}
+
+/* Table cells */
+.markdown-rendered td,
+.cm-html-embed td,
+table td {
+  padding: 6px 12px;
+  border: 1px solid var(--dnd-table-border);
+  vertical-align: top;
+}
+
+/* Add a subtle rule line under the header, like D&D books */
+.markdown-rendered thead tr {
+  border-bottom: 3px double var(--dnd-gold) !important;
+}
+
+/* ============================================================
+   5. BLOCKQUOTES — D&D flavor text style
+   ============================================================ */
+
+.markdown-rendered blockquote,
+.markdown-preview-view blockquote,
+.cm-quote {
+  font-family: 'Libre Baskerville', Georgia, serif !important;
+  font-style: italic;
+  background-color: var(--dnd-note-bg) !important;
+  border-left: 4px solid var(--dnd-primary) !important;
+  padding: 0.75em 1.25em !important;
+  margin: 1.25em 0 !important;
+  border-radius: 0 8px 8px 0;
+  color: var(--dnd-dark);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Remove italic from bold text inside blockquotes */
+.markdown-rendered blockquote strong,
+.markdown-rendered blockquote b {
+  font-style: normal;
+  font-variant: small-caps;
+  color: var(--dnd-primary);
+}
+
+/* Blockquote citations / attribution */
+.markdown-rendered blockquote em:last-child {
+  display: block;
+  text-align: right;
+  margin-top: 0.5em;
+  font-size: 0.9em;
+  font-style: normal;
+  color: var(--dnd-primary-light);
+}
+
+/* ============================================================
+   6. HORIZONTAL RULES — Decorative D&D dividers
+   ============================================================ */
+
+.markdown-rendered hr,
+.cm-hr {
+  border: none !important;
+  height: 2px !important;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--dnd-gold),
+    var(--dnd-primary),
+    var(--dnd-gold),
+    transparent
+  ) !important;
+  margin: 2em 0 !important;
+}
+
+/* ============================================================
+   7. CALLOUTS — D&D note box style
+   ============================================================ */
+
+.callout {
+  border-radius: 4px !important;
+  border-left-width: 5px !important;
+}
+
+/* The default callouts get D&D colours */
+.callout[data-callout="info"],
+.callout[data-callout="note"],
+.callout[data-callout="abstract"],
+.callout[data-callout="summary"],
+.callout[data-callout="tldr"] {
+  --callout-color: 122, 32, 13;
+}
+
+.callout[data-callout="warning"],
+.callout[data-callout="caution"],
+.callout[data-callout="attention"] {
+  --callout-color: 230, 154, 40;
+}
+
+.callout[data-callout="danger"],
+.callout[data-callout="error"] {
+  --callout-color: 180, 30, 20;
+}
+
+.callout[data-callout="tip"],
+.callout[data-callout="hint"],
+.callout[data-callout="important"] {
+  --callout-color: 46, 125, 50;
+}
+
+.callout[data-callout="success"],
+.callout[data-callout="check"],
+.callout[data-callout="done"] {
+  --callout-color: 46, 125, 50;
+}
+
+.callout[data-callout="question"],
+.callout[data-callout="help"],
+.callout[data-callout="faq"] {
+  --callout-color: 100, 80, 160;
+}
+
+.callout[data-callout="example"] {
+  --callout-color: 100, 100, 100;
+}
+
+.callout[data-callout="quote"],
+.callout[data-callout="cite"] {
+  --callout-color: 122, 32, 13;
+}
+
+/* ---- Custom D&D callouts ---- */
+/* DM Notes */
+.callout[data-callout="dm-note"] {
+  --callout-color: 122, 32, 13;
+  --callout-icon: lucide-scroll;
+  background-color: var(--dnd-note-bg) !important;
+  border-color: var(--dnd-primary) !important;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+/* Read Aloud / Boxed Text */
+.callout[data-callout="readaloud"] {
+  --callout-color: 230, 154, 40;
+  --callout-icon: lucide-book-open;
+  background-color: var(--dnd-parchment) !important;
+  border: 2px solid var(--dnd-gold) !important;
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-style: italic;
+  box-shadow: inset 0 0 15px rgba(230, 154, 40, 0.1);
+}
+
+/* Treasure / Loot */
+.callout[data-callout="loot"] {
+  --callout-color: 230, 154, 40;
+  --callout-icon: lucide-coins;
+  background-color: var(--dnd-parchment) !important;
+  border-color: var(--dnd-gold) !important;
+}
+
+/* Statblock embed note */
+.callout[data-callout="statblock"] {
+  --callout-color: 146, 38, 16;
+  --callout-icon: lucide-swords;
+}
+
+/* ============================================================
+   8. BOLD & EMPHASIS — Tweaks
+   ============================================================ */
+
+.markdown-rendered strong,
+.cm-strong {
+  color: var(--dnd-primary);
+  font-weight: 700;
+}
+
+.markdown-rendered em,
+.cm-em {
+  color: var(--dnd-primary-light);
+}
+
+/* ============================================================
+   9. CODE / INLINE CODE — Keeps it readable
+   ============================================================ */
+
+.markdown-rendered code,
+.cm-inline-code {
+  background-color: var(--dnd-parchment-dark) !important;
+  color: var(--dnd-primary) !important;
+  border-radius: 3px;
+  padding: 0.15em 0.4em;
+  font-size: 0.9em;
+}
+
+/* ============================================================
+   10. LINKS — Subtle D&D styling
+   ============================================================ */
+
+.markdown-rendered a.internal-link,
+.cm-hmd-internal-link {
+  color: var(--dnd-primary) !important;
+  text-decoration: underline;
+  text-decoration-color: var(--dnd-gold);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.markdown-rendered a.internal-link:hover,
+.cm-hmd-internal-link:hover {
+  color: var(--dnd-primary-light) !important;
+  text-decoration-color: var(--dnd-primary);
+}
+
+/* ============================================================
+   11. LISTS — Subtle D&D styling
+   ============================================================ */
+
+.markdown-rendered ul,
+.markdown-rendered ol {
+  padding-left: 1.5em;
+}
+
+.markdown-rendered li::marker {
+  color: var(--dnd-primary);
+}
+
+/* ============================================================
+   12. PAGE WIDTH — Wider for readable tables
+   ============================================================ */
+
+.markdown-reading-view .markdown-preview-view,
+.markdown-source-view .cm-editor .cm-content {
+  max-width: 900px;
+}
+
+/* ============================================================
+   13. TAGS — Styled like D&D labels
+   ============================================================ */
+
+.markdown-rendered .tag,
+.cm-hashtag {
+  background-color: var(--dnd-parchment-dark) !important;
+  color: var(--dnd-primary) !important;
+  border: 1px solid var(--dnd-table-border);
+  border-radius: 4px;
+  padding: 0.1em 0.5em;
+  font-size: 0.85em;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+/* ============================================================
+   14. PROPERTIES / FRONTMATTER — Understated
+   ============================================================ */
+
+.metadata-container {
+  border-bottom: 2px solid var(--dnd-gold) !important;
+  margin-bottom: 1.5em !important;
+}
+
+.metadata-property-key {
+  color: var(--dnd-primary) !important;
+  font-variant: small-caps;
+}
+
+/* ============================================================
+   15. FOOTNOTES
+   ============================================================ */
+
+.footnotes {
+  border-top: 2px solid var(--dnd-gold) !important;
+  margin-top: 2em;
+  padding-top: 1em;
+  font-size: 0.85em;
+}
+
+/* ============================================================
+   16. EMBEDS — Clean D&D look
+   ============================================================ */
+
+.markdown-embed {
+  border-left: 3px solid var(--dnd-primary) !important;
+  border-radius: 0 4px 4px 0;
+}
+
+.markdown-embed-title {
+  color: var(--dnd-primary) !important;
+  font-family: 'Libre Baskerville', Georgia, serif;
+}

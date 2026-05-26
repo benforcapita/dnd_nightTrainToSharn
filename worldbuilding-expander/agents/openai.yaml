@@ -1,0 +1,4 @@
+interface:
+  display_name: "Worldbuilding Context Expander"
+  short_description: "Expand Obsidian worldbuilding through guided conversation"
+  default_prompt: "Use $worldbuilding-expander to deepen my Obsidian worldbuilding notes through targeted questions and gap detection."
